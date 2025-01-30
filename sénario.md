@@ -42,7 +42,8 @@ Connexion échouée --> Si l’identifiant ou le mot de passe est incorrect, un 
 Adresse invalide --> Si l’adresse saisie est incorrecte (format ou champ vide), un message d’erreur est affiché.
                      Le client doit corriger l’erreur avant de poursuivre.
 
-Préconditions
+condition avant commande v
+------------------------
 
 Paiement refusé --> Si le paiement en ligne échoue, le client est invité à essayer une autre méthode.
                     Après trois tentatives, la commande est annulée.
@@ -51,7 +52,7 @@ Commande incomplète --> Si le client ne finalise pas la commande après un cert
                         Il peut la retrouver et la valider plus tard.
 
 -------------------------------------------------------------------------------------------------------------------
-Postconditions --> La commande est enregistrée et visible dans l’historique du client. 
-                   Un bon de livraison et une facture sont générés.
-                   Si un paiement a été effectué, la transaction est enregistrée.
+conditions après commande --> La commande est enregistrée et visible dans l’historique du client. 
+                              Un bon de livraison et une facture sont générés.
+                              Si un paiement a été effectué, la transaction est enregistrée.
 -------------------------------------------------------------------------------------------------------------------
