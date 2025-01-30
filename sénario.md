@@ -1,11 +1,15 @@
 Cas d'utilisation : Création d'une commande :
+---------------------------------------------
 
 Acteur principal
     Client > Le client a un compte utilisateur valide (sauf s’il crée un compte avant de commander).
              Le catalogue des produits est disponible et mis à jour.
 ----------------------------------------------------------------------------------------------------------
 
+----------------------------------------------------------------------------------------------------------
+
 Flux nominal : Happy day
+------------------------
 
     Consultation du catalogue > Le client parcourt les rubriques et sélectionne les produits souhaités.
 
@@ -28,7 +32,7 @@ Flux nominal : Happy day
 ------------------------------------------------------------------------------------------------------------             
 
 Sénario Alternatif :
-
+--------------------
 Produit en rupture de stock -->Lors de l'ajout d’un produit au panier, le système détecte qu’il n’y a plus de stock disponible.
                                Le client est informé et peut choisir un autre produit ou réduire la quantité.
 
@@ -45,8 +49,9 @@ Paiement refusé --> Si le paiement en ligne échoue, le client est invité à e
 
 Commande incomplète --> Si le client ne finalise pas la commande après un certain délai, son panier est enregistré mais la commande n'est pas validée.
                         Il peut la retrouver et la valider plus tard.
--------------------------------------------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------------------------------------------
 Postconditions --> La commande est enregistrée et visible dans l’historique du client. 
                    Un bon de livraison et une facture sont générés.
                    Si un paiement a été effectué, la transaction est enregistrée.
+-------------------------------------------------------------------------------------------------------------------
