@@ -1,0 +1,80 @@
+@startuml
+
+class Utilisateur {
+    - id_utilisateur : VARCHAR(6)
+    - nom_utilisateur : VARCHAR(50)
+    - email_utilisateur : VARCHAR(100)
+    - mot_de_passe : VARCHAR(100)
+    - type_utilisateur : VARCHAR(50)
+    - adresse : VARCHAR(255)
+    - telephone : VARCHAR(20)
+    - adresse_facturation : VARCHAR(255)
+    - adresse_livraison : VARCHAR(255)
+    - historique_connexion : VARCHAR(255)
+    - numero_siren : VARCHAR(9)
+}
+
+class Commande {
+    - id_commande : VARCHAR(8)
+    - date_commande : DATE
+    - montant_total : DECIMAL(15,2)
+    - facture : VARCHAR(255)
+    - moyen_paiement : VARCHAR(50)
+    - bon_commande : VARCHAR(255)
+    - date_facturation : DATE
+}
+
+class Categorie {
+    - id_categorie : VARCHAR(4)
+    - nom_categorie : VARCHAR(50)
+    - image_categorie : VARCHAR(200)
+    - description_categorie : VARCHAR(255)
+}
+
+class SousCategorie {
+    - id_souscategorie : VARCHAR(4)
+    - nom_souscategorie : VARCHAR(50)
+    - image_souscategorie : VARCHAR(200)
+    - description_souscategorie : VARCHAR(255)
+}
+
+class Produit {
+    - id_produit : VARCHAR(4)
+    - nom_produit : VARCHAR(100)
+    - description : VARCHAR(255)
+    - prix_ht : DECIMAL(8,2)
+    - image_produit : VARCHAR(200)
+    - reduction : VARCHAR(50)
+    - fournisseur : VARCHAR(50)
+    - stock : INT
+    - top_produit : VARCHAR(50)
+    - produit_ttc : VARCHAR(50)
+}
+
+class Livraison {
+    - Id_Livraison : INT
+    - date_livraison : DATE
+    - delais_livraison : DECIMAL(3,1)
+    - statut_livraison : VARCHAR(50)
+}
+
+class Concerne {
+    - id_produit : VARCHAR(4)
+    - id_commande : VARCHAR(8)
+    - quantite : VARCHAR(50)
+}
+
+class Contient {
+    - id_produit : VARCHAR(4)
+    - Id_Livraison : INT
+    - quantite : VARCHAR(50)
+}
+
+Utilisateur "1" -- "*" Commande : passe
+Commande "1" -- "*" Livraison : est livrée par
+Commande "1" -- "*" Concerne : inclut
+Livraison "1" -- "*" Contient : contient
+Categorie "1" -- "*" SousCategorie : possède
+SousCategorie "1" -- "*" Produit : contient
+
+@enduml

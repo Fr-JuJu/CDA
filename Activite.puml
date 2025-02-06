@@ -1,0 +1,19 @@
+@startuml
+
+start
+
+:Consulter le catalogue;
+:Ajouter un produit au panier;
+:Se connecter;
+:Valider les adresses;
+:Choisir mode de paiement;
+if (Paiement validé?) then (oui)
+    :Valider la commande;
+    :Envoyer confirmation par email;
+else (non)
+    :Demander nouvelle tentative;
+endif
+
+stop
+
+@enduml
